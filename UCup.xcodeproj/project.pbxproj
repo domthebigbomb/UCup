@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3E19BD187B65D30006749A /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3E19BC187B65D30006749A /* FoodViewController.m */; };
 		0B833BC6186E2FF700CF220F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833BC5186E2FF700CF220F /* Foundation.framework */; };
 		0B833BC8186E2FF700CF220F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833BC7186E2FF700CF220F /* CoreGraphics.framework */; };
 		0B833BCA186E2FF700CF220F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833BC9186E2FF700CF220F /* UIKit.framework */; };
@@ -313,6 +314,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B3E19BB187B65D30006749A /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
+		0B3E19BC187B65D30006749A /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
 		0B833BC2186E2FF700CF220F /* UCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B833BC5186E2FF700CF220F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0B833BC7186E2FF700CF220F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -849,6 +852,8 @@
 				0BFB5A10186FE7500058C10A /* MusicViewController.m */,
 				0BD4D197187336550059982A /* MusicLoginViewController.h */,
 				0BD4D198187336550059982A /* MusicLoginViewController.m */,
+				0B3E19BB187B65D30006749A /* FoodViewController.h */,
+				0B3E19BC187B65D30006749A /* FoodViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1543,6 +1548,7 @@
 				0B833C1D186E730500CF220F /* PartyDataController.m in Sources */,
 				0BFB59E6186FA9560058C10A /* SPPostTracksToInboxTests.m in Sources */,
 				0BFB59E2186FA9560058C10A /* SPAudioDeliveryTests.m in Sources */,
+				0B3E19BD187B65D30006749A /* FoodViewController.m in Sources */,
 				0BFB59D1186FA9560058C10A /* SPCoreAudioController.m in Sources */,
 				0BFB59DB186FA9560058C10A /* SPSession.m in Sources */,
 				0B833BDC186E2FF700CF220F /* UCupViewController.m in Sources */,

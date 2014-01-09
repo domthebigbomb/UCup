@@ -46,17 +46,11 @@
 
 -(IBAction)cancel:(UIStoryboardSegue *)segue{
     if([[segue identifier] isEqualToString:@"CancelCreateParty"]){
-        //[self dismissViewControllerAnimated:YES completion:NULL];
     }
 }
 
 -(IBAction)goHome:(UIStoryboardSegue *)segue{
-    /*
-    if([[segue identifier] isEqualToString:@"ReturnSpotify"]){
-        [self dismissViewControllerAnimated:YES completion:NULL];
-        //[[SPSession sharedSession] logout:^{}];
-    }
-     */
+
 }
 
 @end

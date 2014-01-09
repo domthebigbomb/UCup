@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9A944817-2155-406E-A5CD-048E41391864</string>
+	<key>IDESourceControlProjectName</key>
+	<string>UCup</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9CEB2953-2EEE-45E2-BC7A-FEB466BFCBBC</key>
+		<string>https://github.com/domthebigbomb/UCup.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>UCup.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9CEB2953-2EEE-45E2-BC7A-FEB466BFCBBC</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/domthebigbomb/UCup.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9CEB2953-2EEE-45E2-BC7A-FEB466BFCBBC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9CEB2953-2EEE-45E2-BC7A-FEB466BFCBBC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UCup</string>
+		</dict>
+	</array>
+</dict>
+</plist>
