@@ -31,7 +31,6 @@
 @synthesize currentTrack;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *segueID = [segue identifier];
     if ([[segue identifier] isEqualToString:@"ReturnMusic"]) {
         _currentTrack = nil;
         self.currentTrack = nil;
@@ -68,17 +67,11 @@
     
 }
 
--(void)viewWillDisappear:(BOOL)animated{
- 
-}
-
 -(void)showLogin {
     
 	SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
 	controller.allowsCancel = NO;
-	
-	[self presentModalViewController:controller animated:NO];
-    
+    [self presentViewController:controller animated:NO completion:NULL];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
@@ -190,44 +183,7 @@
                 
                 
             }];
-			/*
-            [playlists addObject:[SPSession sharedSession].starredPlaylist];
-			[playlists addObject:[SPSession sharedSession].inboxPlaylist];
-			[playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
-             
-			[SPAsyncLoading waitUntilLoaded:playlists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
-				
-				// All of our playlists have loaded their metadata — wait for all tracks to load their metadata.
-             
-                /*
-				NSLog(@"[%@ %@]: %@ of %@ playlists loaded.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),
-					  [NSNumber numberWithInteger:loadedPlaylists.count], [NSNumber numberWithInteger:loadedPlaylists.count + notLoadedPlaylists.count]);
-				
-				NSArray *playlistItems = [loadedPlaylists valueForKeyPath:@"@unionOfArrays.items"];
-				NSArray *tracks = [self tracksFromPlaylistItems:playlistItems];
-				
-				[SPAsyncLoading waitUntilLoaded:tracks timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedTracks, NSArray *notLoadedTracks) {
-					
-					// All of our tracks have loaded their metadata. Hooray!
-					NSLog(@"[%@ %@]: %@ of %@ tracks loaded.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),
-						  [NSNumber numberWithInteger:loadedTracks.count], [NSNumber numberWithInteger:loadedTracks.count + notLoadedTracks.count]);
-					
-					NSMutableArray *theTrackPool = [NSMutableArray arrayWithCapacity:loadedTracks.count];
-					
-					for (SPTrack *aTrack in loadedTracks) {
-						if (aTrack.availability == SP_TRACK_AVAILABILITY_AVAILABLE && [aTrack.name length] > 0)
-							[theTrackPool addObject:aTrack];
-					}
-					
-					self.trackPool = [NSMutableArray arrayWithArray:[[NSSet setWithArray:theTrackPool] allObjects]];
-					// ^ Thin out duplicates.
-					_prevTrackPool = [[NSMutableArray alloc] init];
-					_playButton.enabled = YES;
-				}];
-            
-			}];
-        */
-		}];
+        }];
 	}];
 }
 

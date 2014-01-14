@@ -51,7 +51,7 @@
     
     partyList = [[Firebase alloc] initWithUrl:partyListUrl];
     
-    _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    //_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     _tap.enabled = NO;
     [self.view addGestureRecognizer:_tap];
     
@@ -72,15 +72,17 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    _tap.enabled = NO;
     return YES;
 }
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

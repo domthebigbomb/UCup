@@ -32,9 +32,7 @@
     
 	SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
 	controller.allowsCancel = YES;
-	//controller.loginDelegate = self.viewController;
-	[self presentModalViewController:controller animated:NO];
-    
+    [self presentViewController:controller animated:NO completion:NULL];
 }
 
 -(UIViewController *)viewControllerToPresentLoginViewForSession:(SPSession *)aSession {
@@ -47,14 +45,14 @@
     }
 }
 
-
 -(void)sessionDidLoginSuccessfully:(SPSession *)aSession; {
     _loggedIn = YES;
 }
 
 -(void)loginViewController:(SPLoginViewController *)controller didCompleteSuccessfully:(BOOL)didLogin {
 	
-	[self dismissModalViewControllerAnimated:YES];
+	//[self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 	
 	
 }

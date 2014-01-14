@@ -81,7 +81,7 @@
     if ([[segue identifier] isEqualToString:@"ShowPartyDetails"]) {
         PartyDetailViewController *detailViewController = [segue destinationViewController];
         int row = [self.tableView indexPathForSelectedRow].row;
-        detailViewController.party = [_dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+        detailViewController.party = [_dataController objectInListAtIndex:row];
     }
 }
 

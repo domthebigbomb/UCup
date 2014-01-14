@@ -24,6 +24,6 @@
               cost:(NSString *) cost partyTime:(NSString *) partyTime numberOfGuestsAllowed:(NSUInteger) numGuestsAllowed
           isPublic:(BOOL) isPrivate;
 
--(NSArray *) getObject;
+-(NSDictionary *) getObject;
 
 @end

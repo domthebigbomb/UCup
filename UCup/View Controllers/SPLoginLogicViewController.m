@@ -277,7 +277,8 @@
 	loggingInLabel.font = [UIFont systemFontOfSize:14.0];
 	loggingInLabel.textColor = [UIColor colorWithWhite:0.3 alpha:1.0];
 	loggingInLabel.backgroundColor = [UIColor whiteColor];
-	loggingInLabel.textAlignment = UITextAlignmentCenter;
+    loggingInLabel.textAlignment = NSTextAlignmentCenter;
+	//loggingInLabel.textAlignment = UITextAlignmentCenter;
 	
 	[self.loggingInView addSubview:loggingInLabel];
 	[self.loginFormView addSubview:self.loggingInView];
@@ -337,7 +338,7 @@
     [super viewWillAppear:animated];
 
 	previousStyle = [[UIApplication sharedApplication] statusBarStyle];
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:animated];
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:animated];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {

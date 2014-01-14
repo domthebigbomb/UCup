@@ -145,7 +145,6 @@
 	SPTestAssert([SPSession sharedSession] != nil, @"Session should not be be nil.");
 	
 	[SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedItems, NSArray *notLoadedItems) {
-		
 		SPTestAssert(dispatch_get_current_queue() == dispatch_get_main_queue(), @"SPAsyncLoading callback on wrong queue.");
 		SPTestAssert(notLoadedItems.count == 0, @"Session loading timed out for %@", [SPSession sharedSession]);
 		

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class FoodDataController;
+
 @interface FoodViewController : UITableViewController
+
+@property (strong, nonatomic) FoodDataController *foodController;
 
 @end

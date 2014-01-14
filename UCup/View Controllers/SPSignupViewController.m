@@ -282,8 +282,8 @@
 	UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:agreement];
 	nav.navigationBar.barStyle = UIBarStyleBlack;
 	nav.modalPresentationStyle = UIModalPresentationFormSheet;
- 
-	[self presentModalViewController:nav animated:YES];
+    [self presentViewController:nav animated:YES completion:NULL];
+	//[self presentModalViewController:nav animated:YES];
 }
 
 #pragma mark Merge page

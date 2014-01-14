@@ -9,7 +9,7 @@
 #import "UCupViewController.h"
 #import "AddPartyViewController.h"
 #import "PartyDataController.h"
-
+#import "LocationHandler.h"
 
 @interface UCupViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *createPartyButton;
@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
