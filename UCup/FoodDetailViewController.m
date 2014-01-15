@@ -17,14 +17,20 @@
 @property (weak, nonatomic) IBOutlet UILabel *streetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityStateZipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
-- (IBAction)directionButton:(UIButton *)sender;
+- (IBAction)openDirections:(UIButton *)sender;
 
 @end
 
-@implementation FoodDetailViewController
+@implementation FoodDetailViewController{
+    CLLocationDegrees lat;
+    CLLocationDegrees lon;
+    BOOL mapLoaded;
+}
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [[LocationHandler getSharedInstance]setDelegate:self];
+    mapLoaded = NO;
     [_phoneButton setTitle:[_business getPhone]forState:UIControlStateNormal];
     UIImage *businessPic = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_business getImageUrl]]]];
     UIImage *ratingImg = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[_business getRatingUrlWithSize:@"large"]]]];
@@ -34,10 +40,59 @@
     [_nameLabel setText:[_business getName]];
     [_streetLabel setText:[_business getStreet]];
     [_cityStateZipLabel setText:[_business getCityStateZip]];
+    [self loadInternalMap:YES];
     _mapView.delegate = self;
 }
 
+// isInternal is defined as the map inside the detail view controller
+// NO indicates the funciton should prepare to send a request to the
+// native Map app
+-(void)loadInternalMap:(BOOL)isInternal{
+    Class mapItemClass = [MKMapItem class];
+    if(mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]){
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        NSString *mapString = [NSString stringWithFormat:@"%@ , %@",[_business getStreet],[_business getCityStateZip]];
+        [geocoder geocodeAddressString:mapString completionHandler:^(NSArray *placemarks, NSError *error) {
+            CLPlacemark *geocodedPlacemark = [placemarks objectAtIndex:0];
+            MKPlacemark *placemark = [[MKPlacemark alloc]
+                                      initWithCoordinate:geocodedPlacemark.location.coordinate
+                                      addressDictionary:geocodedPlacemark.addressDictionary];
 
+            // Create a map item for the geocoded address to pass to Maps app
+            MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+            [mapItem setName:geocodedPlacemark.name];
+            [mapItem setPhoneNumber:[_business getPhone]];
+            
+            // Set the directions mode
+            NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+            
+            // Get the "Current User Location" MKMapItem
+            MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+            
+            // Pass the current location and destination map items to the Maps app
+            // Set the direction mode in the launchOptions dictionary
+            if(!isInternal){
+                [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
+            }else{
+                [_mapView addAnnotation: placemark];
+            }
+        }];
+        
+    }
+
+}
+
+-(void)didUpdateToLocation:(CLLocation *)newLocation
+              fromLocation:(CLLocation *)oldLocation{
+    if(!mapLoaded){
+        CLLocationCoordinate2D center = [newLocation coordinate];
+        //Convert miles back into meters
+        NSUInteger dist = 3*[_business getDistance] / .000621371;
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, dist, dist);
+        [_mapView setRegion:region];
+        mapLoaded = YES;
+    }
+}
 
 
 - (IBAction)phoneButton:(UIButton *)sender {
@@ -50,7 +105,6 @@
     }
 }
 - (IBAction)openDirections:(UIButton *)sender {
-}
-- (IBAction)directionButton:(UIButton *)sender {
-}
+    [self loadInternalMap:NO];
+    }
 @end

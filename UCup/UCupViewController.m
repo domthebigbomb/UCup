@@ -26,8 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
+    [[LocationHandler getSharedInstance]startUpdating];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 

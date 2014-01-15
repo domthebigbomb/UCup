@@ -34,6 +34,7 @@
 @implementation AddPartyViewController{
     NSString *partyListUrl;
     Firebase *partyList;
+    UITextField *currentField;
 }
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,7 +52,7 @@
     
     partyList = [[Firebase alloc] initWithUrl:partyListUrl];
     
-    //_tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    _tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     _tap.enabled = NO;
     [self.view addGestureRecognizer:_tap];
     
@@ -59,6 +60,18 @@
     _dateFormatter = [[NSDateFormatter alloc] init];
     [_dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [_dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    currentField = textField;
+    _tap.enabled = YES;
+    return YES;
+}
+
+-(void)hideKeyboard
+{
+    [_currField resignFirstResponder];
+    _tap.enabled = NO;
 }
 
 - (void)dealloc

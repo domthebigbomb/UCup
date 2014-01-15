@@ -36,7 +36,6 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [[LocationHandler getSharedInstance]setDelegate:self];
-    [[LocationHandler getSharedInstance]startUpdating];
     consumer = [[OAConsumer alloc] initWithKey:@"VyulooMDz3bBe4QZXFNIaQ" secret:@"r28CBYrMixYLqH1NQC2NkJQ78HU"];
     token = [[OAToken alloc] initWithKey:@"IZu11-rYwtDIfhs0PxT7B2vzTxVLplzX" secret:@"whBvqmxSfXbxGBeCQww-gGzYj3k"];
     _foodController = [[FoodDataController alloc] init];

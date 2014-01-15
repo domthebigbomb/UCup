@@ -17,5 +17,6 @@
 -(NSUInteger) countOfList;
 -(Party *)objectInListAtIndex:(NSUInteger) theIndex;
 -(void) addParty:(Party *) party;
+-(void) clearParties;
 
 @end

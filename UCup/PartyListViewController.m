@@ -34,6 +34,8 @@
     partyListSession = [[Firebase alloc] initWithUrl:partyListUrl];
     
     [partyListSession observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        [_dataController clearParties];
+        [[self tableView] reloadData];
         NSArray *partyList = (NSArray *)snapshot.value;
         Party *partyToInsert;
         for(NSString *partyName in partyList){
@@ -41,7 +43,6 @@
             partyToInsert = [[Party alloc]initWithName:[party objectForKey:@"Party Name"] location:[party objectForKey:@"Location"] cost:[party objectForKey:@"Cost"] partyTime:[party objectForKey:@"Time Of Party"] numberOfGuestsAllowed:[[party objectForKey:@"Num Guests"] integerValue] isPublic:[[party objectForKey:@"Room Is Private"] boolValue]];
             [_dataController addParty:partyToInsert];
         }
-        
         [[self tableView] reloadData];
     }];
 }

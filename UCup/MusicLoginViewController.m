@@ -15,7 +15,8 @@
     
     NSError *error = nil;
     ///*
-	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
+    if([SPSession sharedSession] == nil)
+        [SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
 											   userAgent:@"com.spotify.UCup"
 										   loadingPolicy:SPAsyncLoadingManual
 												   error:&error];

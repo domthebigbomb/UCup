@@ -32,17 +32,23 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"ReturnMusic"]) {
+        [_playbackManager setIsPlaying:NO];
         _currentTrack = nil;
         self.currentTrack = nil;
-        _playbackManager = nil;
         [self removeObserver:self forKeyPath:@"currentTrack.name"];
         [self removeObserver:self forKeyPath:@"currentTrack.artists"];
         [self removeObserver:self forKeyPath:@"currentTrack.duration"];
         [self removeObserver:self forKeyPath:@"currentTrack.album.cover.image"];
         [self removeObserver:self forKeyPath:@"_playbackManager.trackPosition"];
+        _playbackManager = nil;
+
         [[SPSession sharedSession] logout:^{}];
+        [[SPSession sharedSession] setDelegate:nil];
     }
-    self.playbackManager = nil;
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+
 }
 
 -(void)viewDidLoad{
@@ -180,12 +186,12 @@
                     }];
                     
                 }
-                
-                
             }];
         }];
 	}];
 }
+
+
 
 -(NSArray *)playlistsInFolder:(SPPlaylistFolder *)aFolder {
 	
@@ -236,8 +242,9 @@
 }
 
 -(void)saveTrackInStack:(SPTrack *)playingTrack{
-    if([_playbackManager.currentTrack isEqual: playingTrack])
+    if([_playbackManager.currentTrack isEqual: playingTrack]){
         [_prevTrackPool addObject:_currentTrack];
+    }
 }
 
 - (IBAction)spotifyButton:(UIButton *)sender {
@@ -264,7 +271,7 @@
 
 }
 
-- (IBAction)nextButton:(UIButton *)sender {
+-(void)playNextTrack{
     if (self.playbackManager.currentTrack != nil) {
 		[self.playlist addItem:self.playbackManager.currentTrack atIndex:self.playlist.items.count callback:^(NSError *error) {
 			if (error) NSLog(@"%@", error);
@@ -276,6 +283,10 @@
         _currentTrack = [self.trackPool randomObject];
     }
     [self startPlaybackOfTrack:_currentTrack];
+}
+
+- (IBAction)nextButton:(UIButton *)sender {
+    [self playNextTrack];
 }
 
 - (IBAction)previousButton:(UIButton *)sender {

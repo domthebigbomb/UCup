@@ -36,6 +36,10 @@
     [_masterPartyList addObject:party];
 }
 
+-(void)clearParties{
+    [_masterPartyList removeAllObjects];
+}
+
 -(NSUInteger)countOfList{
     return [_masterPartyList count];
 }
