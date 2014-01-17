@@ -39,4 +39,4 @@ direct the user to a more detailed oriented view that will allow users to call t
 location.
 
 Feedback:
-To be implemented...
+Open Mail.app with appropriate subject and sender fields
