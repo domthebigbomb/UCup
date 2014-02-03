@@ -78,18 +78,13 @@
                                       initWithCoordinate:geocodedPlacemark.location.coordinate
                                       addressDictionary:geocodedPlacemark.addressDictionary];
             
-            // Create a map item for the geocoded address to pass to Maps app
             MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
             [mapItem setName:[_party partyName]];
             
-            // Set the directions mode
             NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
             
-            // Get the "Current User Location" MKMapItem
             MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
             
-            // Pass the current location and destination map items to the Maps app
-            // Set the direction mode in the launchOptions dictionary
             if(!isInternal){
                 [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
             }else{

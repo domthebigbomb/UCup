@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
+#import <FacebookSDK/FacebookSDK.h>
 @class PartyDataController;
 
-@interface UCupViewController : UIViewController<SPSessionPlaybackDelegate>
+@interface UCupViewController : UIViewController<SPSessionPlaybackDelegate,FBLoginViewDelegate>
 
 @property (nonatomic, strong)PartyDataController *dataController;
 

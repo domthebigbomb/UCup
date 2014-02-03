@@ -44,9 +44,6 @@
     _mapView.delegate = self;
 }
 
-// isInternal is defined as the map inside the detail view controller
-// NO indicates the funciton should prepare to send a request to the
-// native Map app
 -(void)loadInternalMap:(BOOL)isInternal{
     Class mapItemClass = [MKMapItem class];
     if(mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)]){
@@ -58,19 +55,14 @@
                                       initWithCoordinate:geocodedPlacemark.location.coordinate
                                       addressDictionary:geocodedPlacemark.addressDictionary];
 
-            // Create a map item for the geocoded address to pass to Maps app
             MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-            [mapItem setName:geocodedPlacemark.name];
+            [mapItem setName:[_business getName]];
             [mapItem setPhoneNumber:[_business getPhone]];
             
-            // Set the directions mode
             NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
             
-            // Get the "Current User Location" MKMapItem
             MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
             
-            // Pass the current location and destination map items to the Maps app
-            // Set the direction mode in the launchOptions dictionary
             if(!isInternal){
                 [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem] launchOptions:launchOptions];
             }else{

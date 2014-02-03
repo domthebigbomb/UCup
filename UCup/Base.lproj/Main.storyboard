@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek1-0J-rYR">
-                                <rect key="frame" x="67" y="119" width="156" height="30"/>
+                                <rect key="frame" x="67" y="189" width="156" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
                                 <state key="normal" title="Create A Party">
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ab-95-T2b">
-                                <rect key="frame" x="67" y="157" width="123" height="30"/>
+                                <rect key="frame" x="67" y="227" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
                                 <state key="normal" title="Find A Party">
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRN-hY-iCh">
-                                <rect key="frame" x="67" y="195" width="96" height="30"/>
+                                <rect key="frame" x="67" y="265" width="96" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
                                 <state key="normal" title="Weather">
@@ -53,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kD6-Rv-xaS">
-                                <rect key="frame" x="67" y="233" width="171" height="30"/>
+                                <rect key="frame" x="67" y="303" width="171" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
                                 <state key="normal" title="Pregame Music">
@@ -61,11 +61,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0lO-MH-4xZ" kind="modal" identifier="ReturnSpotify" id="sCG-zZ-b2o"/>
+                                    <segue destination="0lO-MH-4xZ" kind="push" identifier="ReturnSpotify" id="sCG-zZ-b2o"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECb-xg-QGa">
-                                <rect key="frame" x="67" y="271" width="61" height="30"/>
+                                <rect key="frame" x="67" y="341" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
                                 <state key="normal" title="Food">
@@ -76,14 +76,40 @@
                                     <segue destination="v2Y-HO-iQK" kind="push" id="Pia-aI-Vw8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aC-ug-1RU">
-                                <rect key="frame" x="67" y="418" width="115" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aC-ug-1RU">
+                                <rect key="frame" x="95" y="395" width="115" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="18"/>
                                 <state key="normal" title="Feedback">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendFeedback:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tMm-Lq-QG8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with Facebook!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="175" translatesAutoresizingMaskIntoConstraints="NO" id="GsD-D9-no9">
+                                <rect key="frame" x="126" y="96" width="175" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tUo-Id-r6Z" customClass="FBProfilePictureView">
+                                <rect key="frame" x="54" y="96" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.13725490870000001" green="0.13725490870000001" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzT-p7-b31">
+                                <rect key="frame" x="126" y="147" width="64" height="13"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="14"/>
+                                <state key="normal" title="Not you?">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchFbProfile:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jlv-k1-GZw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.13775510204081631" green="0.13775510204081631" blue="0.13775510204081631" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,6 +123,8 @@
                         <outlet property="findPartyButton" destination="4Ab-95-T2b" id="9c3-Y6-Cnu"/>
                         <outlet property="foodButton" destination="ECb-xg-QGa" id="5Qh-1m-NOt"/>
                         <outlet property="musicButton" destination="kD6-Rv-xaS" id="Ji1-0R-t9T"/>
+                        <outlet property="profilePictureView" destination="tUo-Id-r6Z" id="QHz-mD-ke2"/>
+                        <outlet property="statusLabel" destination="GsD-D9-no9" id="i06-xc-ycc"/>
                         <outlet property="weatherButton" destination="wRN-hY-iCh" id="W5q-aM-twZ"/>
                     </connections>
                 </viewController>
@@ -298,10 +326,10 @@
             </objects>
             <point key="canvasLocation" x="1012" y="1179"/>
         </scene>
-        <!--View Controller - Weather Report-->
+        <!--Weather View Controller - Weather Report-->
         <scene sceneID="HmQ-Vm-rtP">
             <objects>
-                <viewController id="cpq-Sg-FMa" sceneMemberID="viewController">
+                <viewController id="cpq-Sg-FMa" customClass="WeatherViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gAX-iz-lTp"/>
                         <viewControllerLayoutGuide type="bottom" id="08P-bi-BJU"/>
@@ -310,27 +338,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="64" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c46-MY-i8y">
-                                <rect key="frame" x="81" y="128" width="158" height="90"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c46-MY-i8y">
+                                <rect key="frame" x="20" y="128" width="280" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="75"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partly Cloud w/ chance of Rain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIg-qn-21T">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIg-qn-21T">
                                 <rect key="frame" x="20" y="226" width="280" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hNV-4U-7Qp">
-                                <rect key="frame" x="60" y="302" width="200" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hE-yD-LiI">
+                                <rect key="frame" x="35" y="289" width="250" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="The temperature is currently:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ah-X7-dYC">
+                                <rect key="frame" x="35" y="84" width="250" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WeatherBug_RGB.png" translatesAutoresizingMaskIntoConstraints="NO" id="7vv-da-SY5">
+                                <rect key="frame" x="44" y="507" width="233" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13725490870000001" green="0.13725490870000001" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Weather Report" id="GMy-FQ-jqN"/>
+                    <navigationItem key="navigationItem" title="Weather Report" id="GMy-FQ-jqN">
+                        <barButtonItem key="rightBarButtonItem" title="Hourly" id="h2z-I2-c3J"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tempDescriptionLabel" destination="wIg-qn-21T" id="HNx-QS-S41"/>
+                        <outlet property="tempHeaderLabel" destination="7ah-X7-dYC" id="yQF-BW-XV6"/>
+                        <outlet property="temperatureLabel" destination="c46-MY-i8y" id="Tou-nu-dlB"/>
+                        <outlet property="weatherImage" destination="0hE-yD-LiI" id="THf-yU-nF1"/>
+                        <outlet property="weatherbugLogo" destination="7vv-da-SY5" id="xSg-xh-B0B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLS-U0-QM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -817,7 +866,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="tintColor" red="0.94349888390000003" green="0.85998015139999995" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.86627072704081631" green="0.28740983331125514" blue="0.29273431210400064" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="0.0"/>
+                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="17"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -876,7 +926,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TKb-2h-os6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-320-album.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKb-2h-os6">
                                 <rect key="frame" x="73" y="171" width="175" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -963,11 +1013,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <action selector="nextButton:" destination="Gam-lz-Jao" eventType="touchUpInside" id="6rt-AW-AhD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-cS-1Rf">
-                                <rect key="frame" x="137" y="426" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-cS-1Rf">
+                                <rect key="frame" x="135" y="416" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="▶︎">
+                                <state key="normal" image="Play Button.png">
                                     <color key="titleColor" red="0.66666668650000005" green="0.81568634510000004" blue="0.0078431377190000002" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -982,7 +1032,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <barButtonItem key="leftBarButtonItem" title="Home" id="LKX-ke-yoH">
                             <color key="tintColor" red="0.074509806930000005" green="0.074509806930000005" blue="0.074509806930000005" alpha="1" colorSpace="deviceRGB"/>
                             <connections>
-                                <segue destination="J5J-8m-SBC" kind="unwind" identifier="ReturnMusic" unwindAction="goHome:" id="aHA-7M-vX0"/>
+                                <segue destination="J5J-8m-SBC" kind="unwind" unwindAction="unwindToLogin:" id="Jm6-yo-he5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -998,7 +1048,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWf-fi-JHi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="J5J-8m-SBC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="1185"/>
+            <point key="canvasLocation" x="1864" y="1179"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="F7W-Gf-c6M">
@@ -1019,11 +1069,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7W-uW-nZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1444" y="1185"/>
+            <point key="canvasLocation" x="1440" y="1179"/>
         </scene>
     </scenes>
     <resources>
         <image name="Icon@2X.png" width="114" height="114"/>
+        <image name="Play Button.png" width="66" height="66"/>
+        <image name="WeatherBug_RGB.png" width="1573" height="412"/>
+        <image name="placeholder-320-album.png" width="320" height="320"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

@@ -13,7 +13,8 @@
 @interface PartyDataController : NSObject
 
 @property (nonatomic, copy) NSMutableArray *masterPartyList;
-
+@property (nonatomic, copy) NSMutableArray *publicPartyList;
+@property (nonatomic, copy) NSMutableArray *privatePartyList;
 -(NSUInteger) countOfList;
 -(Party *)objectInListAtIndex:(NSUInteger) theIndex;
 -(void) addParty:(Party *) party;

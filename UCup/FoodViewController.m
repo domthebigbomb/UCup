@@ -14,6 +14,7 @@
 #import "LocationHandler.h"
 #import <CoreLocation/CoreLocation.h>
 #import <YAJL/YAJL.h>
+
 @implementation FoodViewController{
     NSMutableData *_responseData;
     NSArray *businessData;
@@ -40,8 +41,7 @@
     token = [[OAToken alloc] initWithKey:@"IZu11-rYwtDIfhs0PxT7B2vzTxVLplzX" secret:@"whBvqmxSfXbxGBeCQww-gGzYj3k"];
     _foodController = [[FoodDataController alloc] init];
     locationFound = NO;
-    //[self refreshBusinesses];
-    //[[self tableView] reloadData];
+    
     [[self refreshControl] addTarget:self action:@selector(refreshBusinesses) forControlEvents:UIControlEventValueChanged];
     
 }
@@ -98,7 +98,6 @@
             [_foodController addBusiness:businessToInsert];
         }
         
-        //[[self tableView] reloadData];
         dispatch_async(dispatch_get_main_queue(), ^{
             [[self tableView] reloadData];
         });

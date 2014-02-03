@@ -31,19 +31,20 @@
 @synthesize currentTrack;
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ReturnMusic"]) {
-        [_playbackManager setIsPlaying:NO];
-        _currentTrack = nil;
-        self.currentTrack = nil;
-        [self removeObserver:self forKeyPath:@"currentTrack.name"];
-        [self removeObserver:self forKeyPath:@"currentTrack.artists"];
-        [self removeObserver:self forKeyPath:@"currentTrack.duration"];
-        [self removeObserver:self forKeyPath:@"currentTrack.album.cover.image"];
-        [self removeObserver:self forKeyPath:@"_playbackManager.trackPosition"];
-        _playbackManager = nil;
-
-        [[SPSession sharedSession] logout:^{}];
-        [[SPSession sharedSession] setDelegate:nil];
+    [_playbackManager setIsPlaying:NO];
+    _currentTrack = nil;
+    self.currentTrack = nil;
+    [self removeObserver:self forKeyPath:@"currentTrack.name"];
+    [self removeObserver:self forKeyPath:@"currentTrack.artists"];
+    [self removeObserver:self forKeyPath:@"currentTrack.duration"];
+    [self removeObserver:self forKeyPath:@"currentTrack.album.cover.image"];
+    [self removeObserver:self forKeyPath:@"_playbackManager.trackPosition"];
+    _playbackManager = nil;
+    
+    [[SPSession sharedSession] logout:^{}];
+    [[SPSession sharedSession] setDelegate:nil];
+    if ([[segue identifier] isEqualToString:@"ToSpotifyPlayer"]) {
+        
     }
 }
 
@@ -227,6 +228,7 @@
 		[self.playbackManager playTrack:aTrack callback:^(NSError *error) {
 			if (!error){
                 self.currentTrack = aTrack;
+                [_playButton setImage:[UIImage imageNamed:@"Pause Button.png"] forState:UIControlStateNormal];
                 [self performSelector:@selector(saveTrackInStack:) withObject:aTrack afterDelay:1.0];
             }else{
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't Play"
@@ -263,8 +265,10 @@
         //Handle is there is a current track loaded
         if([_playbackManager isPlaying]){
             [_playbackManager setIsPlaying:NO];
+            [_playButton setImage:[UIImage imageNamed:@"Play Button.png"] forState:UIControlStateNormal];
         }else{
             [_playbackManager setIsPlaying:YES];
+            [_playButton setImage:[UIImage imageNamed:@"Pause Button.png"] forState:UIControlStateNormal];
         }
         
     }

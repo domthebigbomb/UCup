@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0363E91898C09300005CA5 /* Weather.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B0363E81898C09300005CA5 /* Weather.m */; };
+		0B291142189823950044DCF8 /* WeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B291141189823950044DCF8 /* WeatherViewController.m */; };
+		0B291148189825DE0044DCF8 /* HamAppKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B291147189825DE0044DCF8 /* HamAppKey.m */; };
 		0B3E19BD187B65D30006749A /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3E19BC187B65D30006749A /* FoodViewController.m */; };
+		0B5D6078188C978B004B197F /* Pause Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D6076188C978B004B197F /* Pause Button.png */; };
+		0B5D6079188C978B004B197F /* Play Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 0B5D6077188C978B004B197F /* Play Button.png */; };
 		0B643BF018803630009FE8F5 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B643BC818803630009FE8F5 /* NSMutableURLRequest+Parameters.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0B643BF118803630009FE8F5 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B643BCA18803630009FE8F5 /* NSString+URLEncoding.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0B643BF218803630009FE8F5 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B643BCC18803630009FE8F5 /* NSURL+Base.m */; };
@@ -31,7 +36,6 @@
 		0B643C0518803A58009FE8F5 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B643C0418803A58009FE8F5 /* YAJL.framework */; };
 		0B643C0818807536009FE8F5 /* FoodDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B643C0718807536009FE8F5 /* FoodDataController.m */; };
 		0B643C0B18807577009FE8F5 /* Business.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B643C0A18807577009FE8F5 /* Business.m */; };
-		0B643C0E18808149009FE8F5 /* YelpLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B643C0D18808149009FE8F5 /* YelpLocation.m */; };
 		0B833BC6186E2FF700CF220F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833BC5186E2FF700CF220F /* Foundation.framework */; };
 		0B833BC8186E2FF700CF220F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833BC7186E2FF700CF220F /* CoreGraphics.framework */; };
 		0B833BCA186E2FF700CF220F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833BC9186E2FF700CF220F /* UIKit.framework */; };
@@ -64,9 +68,11 @@
 		0B833C1A186E356E00CF220F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B833C19186E356E00CF220F /* AVFoundation.framework */; };
 		0B833C1D186E730500CF220F /* PartyDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B833C1C186E730500CF220F /* PartyDataController.m */; };
 		0B833C20186E941500CF220F /* AddPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B833C1F186E941500CF220F /* AddPartyViewController.m */; };
+		0B91DD95188B0482004B6936 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B91DD94188B0482004B6936 /* FacebookSDK.framework */; };
 		0BB39B3A186EA2BC002B76E4 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BB39B39186EA2BC002B76E4 /* Firebase.framework */; };
 		0BB39B3D186F3434002B76E4 /* PartyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB39B3C186F3434002B76E4 /* PartyListViewController.m */; };
 		0BB39B40186F5627002B76E4 /* PartyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB39B3F186F5627002B76E4 /* PartyDetailViewController.m */; };
+		0BB6A94818A00D5100091C74 /* WeatherBug_RGB.png in Resources */ = {isa = PBXBuildFile; fileRef = 0BB6A94718A00D5100091C74 /* WeatherBug_RGB.png */; };
 		0BBD72CF18835B540043CC8D /* FoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD72CE18835B540043CC8D /* FoodDetailViewController.m */; };
 		0BBD72D2188376730043CC8D /* LocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBD72D1188376730043CC8D /* LocationHandler.m */; };
 		0BD4D1951872C6E80059982A /* SPArrayExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BD4D1941872C6E80059982A /* SPArrayExtensions.m */; };
@@ -340,8 +346,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0363E71898C09300005CA5 /* Weather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weather.h; sourceTree = "<group>"; };
+		0B0363E81898C09300005CA5 /* Weather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weather.m; sourceTree = "<group>"; };
+		0B291140189823950044DCF8 /* WeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherViewController.h; sourceTree = "<group>"; };
+		0B291141189823950044DCF8 /* WeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherViewController.m; sourceTree = "<group>"; };
+		0B291146189825DE0044DCF8 /* HamAppKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamAppKey.h; sourceTree = "<group>"; };
+		0B291147189825DE0044DCF8 /* HamAppKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamAppKey.m; sourceTree = "<group>"; };
 		0B3E19BB187B65D30006749A /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
 		0B3E19BC187B65D30006749A /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
+		0B5D6076188C978B004B197F /* Pause Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Button.png"; sourceTree = "<group>"; };
+		0B5D6077188C978B004B197F /* Play Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play Button.png"; sourceTree = "<group>"; };
 		0B643BC718803630009FE8F5 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		0B643BC818803630009FE8F5 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		0B643BC918803630009FE8F5 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -387,8 +401,6 @@
 		0B643C0718807536009FE8F5 /* FoodDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDataController.m; sourceTree = "<group>"; };
 		0B643C0918807577009FE8F5 /* Business.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Business.h; sourceTree = "<group>"; };
 		0B643C0A18807577009FE8F5 /* Business.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Business.m; sourceTree = "<group>"; };
-		0B643C0C18808149009FE8F5 /* YelpLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpLocation.h; sourceTree = "<group>"; };
-		0B643C0D18808149009FE8F5 /* YelpLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpLocation.m; sourceTree = "<group>"; };
 		0B833BC2186E2FF700CF220F /* UCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B833BC5186E2FF700CF220F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0B833BC7186E2FF700CF220F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -429,11 +441,13 @@
 		0B833C1C186E730500CF220F /* PartyDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyDataController.m; sourceTree = "<group>"; };
 		0B833C1E186E941500CF220F /* AddPartyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartyViewController.h; sourceTree = "<group>"; };
 		0B833C1F186E941500CF220F /* AddPartyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartyViewController.m; sourceTree = "<group>"; };
+		0B91DD94188B0482004B6936 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		0BB39B39186EA2BC002B76E4 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		0BB39B3B186F3434002B76E4 /* PartyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyListViewController.h; sourceTree = "<group>"; };
 		0BB39B3C186F3434002B76E4 /* PartyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyListViewController.m; sourceTree = "<group>"; };
 		0BB39B3E186F5627002B76E4 /* PartyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartyDetailViewController.h; sourceTree = "<group>"; };
 		0BB39B3F186F5627002B76E4 /* PartyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartyDetailViewController.m; sourceTree = "<group>"; };
+		0BB6A94718A00D5100091C74 /* WeatherBug_RGB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WeatherBug_RGB.png; sourceTree = "<group>"; };
 		0BBD72CD18835B540043CC8D /* FoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodDetailViewController.h; sourceTree = "<group>"; };
 		0BBD72CE18835B540043CC8D /* FoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodDetailViewController.m; sourceTree = "<group>"; };
 		0BBD72D0188376730043CC8D /* LocationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHandler.h; sourceTree = "<group>"; };
@@ -777,6 +791,7 @@
 				0B833C04186E352200CF220F /* CFNetwork.framework in Frameworks */,
 				0B833C02186E351D00CF220F /* Security.framework in Frameworks */,
 				0B833C00186E351600CF220F /* MobileCoreServices.framework in Frameworks */,
+				0B91DD95188B0482004B6936 /* FacebookSDK.framework in Frameworks */,
 				0B833BFE186E34DD00CF220F /* CoreLocation.framework in Frameworks */,
 				0B833BC8186E2FF700CF220F /* CoreGraphics.framework in Frameworks */,
 				0B833BCA186E2FF700CF220F /* UIKit.framework in Frameworks */,
@@ -797,6 +812,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2911431898245F0044DCF8 /* HamWeather */ = {
+			isa = PBXGroup;
+			children = (
+				0B291146189825DE0044DCF8 /* HamAppKey.h */,
+				0B291147189825DE0044DCF8 /* HamAppKey.m */,
+			);
+			name = HamWeather;
+			sourceTree = "<group>";
+		};
 		0B643BC31880360E009FE8F5 /* Yelp */ = {
 			isa = PBXGroup;
 			children = (
@@ -898,6 +922,7 @@
 		0B833BC4186E2FF700CF220F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0B91DD94188B0482004B6936 /* FacebookSDK.framework */,
 				0B643C0418803A58009FE8F5 /* YAJL.framework */,
 				0BFB594E186FA6CF0058C10A /* AudioToolbox.framework */,
 				0BFB594C186FA6C80058C10A /* CoreAudio.framework */,
@@ -931,6 +956,7 @@
 		0B833BCB186E2FF700CF220F /* UCup */ = {
 			isa = PBXGroup;
 			children = (
+				0B2911431898245F0044DCF8 /* HamWeather */,
 				0B643BC31880360E009FE8F5 /* Yelp */,
 				0BFB597C186FA7650058C10A /* Spotify */,
 				0B833BDD186E2FF700CF220F /* Images.xcassets */,
@@ -946,6 +972,7 @@
 				0BFB594A186FA6920058C10A /* SPLoginResources.bundle */,
 				0B833BD4186E2FF700CF220F /* UCupAppDelegate.h */,
 				0B833BD5186E2FF700CF220F /* UCupAppDelegate.m */,
+				0BB6A94718A00D5100091C74 /* WeatherBug_RGB.png */,
 				0B833BD7186E2FF700CF220F /* Main.storyboard */,
 				0BFB5943186F635D0058C10A /* View */,
 				0B833BCD186E2FF700CF220F /* UCup-Info.plist */,
@@ -998,8 +1025,8 @@
 				0B643C0718807536009FE8F5 /* FoodDataController.m */,
 				0B643C0918807577009FE8F5 /* Business.h */,
 				0B643C0A18807577009FE8F5 /* Business.m */,
-				0B643C0C18808149009FE8F5 /* YelpLocation.h */,
-				0B643C0D18808149009FE8F5 /* YelpLocation.m */,
+				0B0363E71898C09300005CA5 /* Weather.h */,
+				0B0363E81898C09300005CA5 /* Weather.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1023,6 +1050,8 @@
 				0BBD72CE18835B540043CC8D /* FoodDetailViewController.m */,
 				0B3E19BB187B65D30006749A /* FoodViewController.h */,
 				0B3E19BC187B65D30006749A /* FoodViewController.m */,
+				0B291140189823950044DCF8 /* WeatherViewController.h */,
+				0B291141189823950044DCF8 /* WeatherViewController.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -1150,6 +1179,8 @@
 		0BFB5A12186FF0060058C10A /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D6076188C978B004B197F /* Pause Button.png */,
+				0B5D6077188C978B004B197F /* Play Button.png */,
 				0BFB5A13186FF0060058C10A /* download-on.png */,
 				0BFB5A14186FF0060058C10A /* download-on@2x.png */,
 				0BFB5A15186FF0060058C10A /* download.png */,
@@ -1458,6 +1489,8 @@
 				0BFB5B44186FF0070058C10A /* placeholder-64-playlist@2x.png in Resources */,
 				0BFB5AFE186FF0070058C10A /* header-uncollab@2x.png in Resources */,
 				0BFB5B68186FF0070058C10A /* playlist-local@2x.png in Resources */,
+				0BB6A94818A00D5100091C74 /* WeatherBug_RGB.png in Resources */,
+				0B5D6078188C978B004B197F /* Pause Button.png in Resources */,
 				0BFB5B04186FF0070058C10A /* inbox-artist@2x.png in Resources */,
 				0BFB5B7E186FF0070058C10A /* row_checkbox-off-sel@2x.png in Resources */,
 				0BFB5B74186FF0070058C10A /* playlist-tracks-sel@2x.png in Resources */,
@@ -1527,6 +1560,7 @@
 				0BFB5B55186FF0070058C10A /* playlist-collection.png in Resources */,
 				0BFB5B9E186FF0070058C10A /* swipe-action_queue@2x.png in Resources */,
 				0BFB5B23186FF0070058C10A /* np-pause.png in Resources */,
+				0B5D6079188C978B004B197F /* Play Button.png in Resources */,
 				0BFB5B4B186FF0070058C10A /* playlist-collab-disabled.png in Resources */,
 				0BFB5B39186FF0070058C10A /* olstate-icon-ok.png in Resources */,
 				0BFB5B8C186FF0070058C10A /* swipe-action_add@2x.png in Resources */,
@@ -1678,9 +1712,9 @@
 			files = (
 				0BD4D1951872C6E80059982A /* SPArrayExtensions.m in Sources */,
 				0BFB59D3186FA9560058C10A /* SPImage.m in Sources */,
-				0B643C0E18808149009FE8F5 /* YelpLocation.m in Sources */,
 				0BD4D199187336550059982A /* MusicLoginViewController.m in Sources */,
 				0BFB59CF186FA9560058C10A /* SPAsyncLoading.m in Sources */,
+				0B291142189823950044DCF8 /* WeatherViewController.m in Sources */,
 				0B643BF518803630009FE8F5 /* sha1.c in Sources */,
 				0BFB59D2186FA9560058C10A /* SPErrorExtensions.m in Sources */,
 				0B643BF418803630009FE8F5 /* hmac.c in Sources */,
@@ -1700,6 +1734,7 @@
 				0BFB59E3186FA9560058C10A /* SPConcurrencyTests.m in Sources */,
 				0BFB59E4186FA9560058C10A /* SPMetadataTests.m in Sources */,
 				0BFB59DF186FA9560058C10A /* SPURLExtensions.m in Sources */,
+				0B291148189825DE0044DCF8 /* HamAppKey.m in Sources */,
 				0BFB597A186FA75D0058C10A /* SPLoginViewController.m in Sources */,
 				0BFB59CB186FA9560058C10A /* SPAlbum.m in Sources */,
 				0BFB59D6186FA9560058C10A /* SPPlaylistContainer.m in Sources */,
@@ -1729,6 +1764,7 @@
 				0B643BFB18803630009FE8F5 /* OAMutableURLRequest.m in Sources */,
 				0BFB59E0186FA9560058C10A /* SPUser.m in Sources */,
 				0B643BF018803630009FE8F5 /* NSMutableURLRequest+Parameters.m in Sources */,
+				0B0363E91898C09300005CA5 /* Weather.m in Sources */,
 				0BFB59EA186FA9560058C10A /* SPTests.m in Sources */,
 				0BFB59E1186FA9560058C10A /* NSData+Base64.m in Sources */,
 				0B643BFE18803630009FE8F5 /* OARequestParameter.m in Sources */,
@@ -1879,6 +1915,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/domthebigbomb/Documents/iOS_Dev/UCup,
+					/Users/domthebigbomb/Documents/iOS_Dev/Frameworks/AerisiOS_1.1.82,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UCup/UCup-Prefix.pch";
@@ -1903,6 +1940,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/domthebigbomb/Documents/iOS_Dev/UCup,
+					/Users/domthebigbomb/Documents/iOS_Dev/Frameworks/AerisiOS_1.1.82,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UCup/UCup-Prefix.pch";

@@ -7,6 +7,7 @@
 //
 
 #import "MusicLoginViewController.h"
+#import "UCupViewController.h"
 #include "appkey.c"
 @implementation MusicLoginViewController
 
@@ -60,6 +61,10 @@
 
 
 -(void)sessionDidLogOut:(SPSession *)aSession{
+    _loggedIn = NO;
+}
+
+-(IBAction)unwindToLogin:(UIStoryboardSegue *)segue{
     _loggedIn = NO;
 }
 
