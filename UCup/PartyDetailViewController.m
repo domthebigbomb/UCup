@@ -30,7 +30,7 @@
     _navigationBar.title = [NSString stringWithFormat:@"%@ Details", _party.partyName];
     [self configureView];
     [[LocationHandler getSharedInstance]setDelegate:self];
-    //[[LocationHandler getSharedInstance]startUpdating];
+    [[LocationHandler getSharedInstance]startUpdating];
     mapView.delegate = self;
     mapView.mapType = MKMapTypeStandard;
     [self loadInternalMap:YES];
@@ -120,11 +120,10 @@
     [MKMapItem openMapsWithItems:@[mapitem,currentLocationMapItem] launchOptions:launchOptions];
 }
 
--(void)didUpdateToLocation:(CLLocation *)newLocation
-              fromLocation:(CLLocation *)oldLocation{
+-(void) didUpdateLocations:(NSArray *)locations{
     if(!mapLoaded){
-        CLLocation *center = [[CLLocation alloc] initWithLatitude:[newLocation coordinate].latitude longitude:[newLocation coordinate].longitude];
-        [mapView setCenterCoordinate:[newLocation coordinate]];
+        CLLocation *center = [[CLLocation alloc] initWithLatitude:[[locations lastObject] coordinate].latitude longitude:[[locations lastObject] coordinate].longitude];
+        [mapView setCenterCoordinate:[[locations lastObject] coordinate]];
         NSArray *annotations = [mapView annotations];
         id annotation = [annotations lastObject];
         if([annotation isKindOfClass:[MKUserLocation class]]){
@@ -134,12 +133,13 @@
         CLLocationDistance distance = [party distanceFromLocation:center];
         double regionDist = distance * 3.0;
         if(regionDist != 0){
-            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([newLocation coordinate], regionDist, regionDist);
+            MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance([[locations lastObject] coordinate], regionDist, regionDist);
             [mapView setRegion: region];
             [self.view addSubview:mapView];
             mapLoaded = YES;
         }
     }
+
 }
 
 -(void)didReceiveMemoryWarning{

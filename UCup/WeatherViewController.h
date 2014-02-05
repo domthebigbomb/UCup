@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-@interface WeatherViewController : UIViewController<CLLocationManagerDelegate>{
+@interface WeatherViewController : UIViewController<CLLocationManagerDelegate,UIAlertViewDelegate>{
     CLLocationManager *locationManager;
 }
 

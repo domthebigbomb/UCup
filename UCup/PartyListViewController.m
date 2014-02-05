@@ -12,6 +12,12 @@
 #import "PartyDetailViewController.h"
 #import <Firebase/Firebase.h>
 
+@interface PartyListViewController()
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
+@end
+
+
 @implementation PartyListViewController{
     NSString *partyListUrl;
     Firebase *partyListSession;
@@ -43,6 +49,7 @@
             partyToInsert = [[Party alloc]initWithName:[party objectForKey:@"Party Name"] location:[party objectForKey:@"Location"] cost:[party objectForKey:@"Cost"] partyTime:[party objectForKey:@"Time Of Party"] numberOfGuestsAllowed:[[party objectForKey:@"Num Guests"] integerValue] isPublic:[[party objectForKey:@"Room Is Private"] boolValue]];
             [_dataController addParty:partyToInsert];
         }
+        [_activityIndicator stopAnimating];
         [[self tableView] reloadData];
     }];
 }

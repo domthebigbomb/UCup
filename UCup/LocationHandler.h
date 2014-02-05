@@ -12,8 +12,9 @@
 @protocol LocationHandlerDelegate <NSObject>
 
 @required
--(void) didUpdateToLocation:(CLLocation*)newLocation
-               fromLocation:(CLLocation*)oldLocation;
+// depreceated
+//-(void) didUpdateToLocation:(CLLocation*)newLocation fromLocation:(CLLocation*)oldLocation;
+-(void)didUpdateLocations:(NSArray *)locations;
 @end
 
 @interface LocationHandler : NSObject<CLLocationManagerDelegate>
@@ -24,6 +25,6 @@
 
 +(id)getSharedInstance;
 -(void)startUpdating;
--(void) stopUpdating;
+-(void)stopUpdating;
 
 @end

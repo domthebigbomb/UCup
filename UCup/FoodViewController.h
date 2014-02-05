@@ -10,7 +10,7 @@
 
 @class FoodDataController;
 
-@interface FoodViewController : UITableViewController
+@interface FoodViewController : UITableViewController<UIAlertViewDelegate>
 
 @property (strong, nonatomic) FoodDataController *foodController;
 

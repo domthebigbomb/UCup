@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UISlider *positionSlider;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -167,6 +168,7 @@
                             // All of our tracks have loaded their metadata. Hooray!
                             NSLog(@"[%@ %@]: %@ of %@ tracks loaded.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),
                                   [NSNumber numberWithInteger:loadedTracks.count], [NSNumber numberWithInteger:loadedTracks.count + notLoadedTracks.count]);
+                            [_activityIndicator stopAnimating];
                             
                             NSMutableArray *theTrackPool = [NSMutableArray arrayWithCapacity:loadedTracks.count];
                             

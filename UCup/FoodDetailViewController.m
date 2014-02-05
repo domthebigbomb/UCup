@@ -74,10 +74,9 @@
 
 }
 
--(void)didUpdateToLocation:(CLLocation *)newLocation
-              fromLocation:(CLLocation *)oldLocation{
+-(void) didUpdateLocations:(NSArray *)locations{
     if(!mapLoaded){
-        CLLocationCoordinate2D center = [newLocation coordinate];
+        CLLocationCoordinate2D center = [[locations lastObject] coordinate];
         //Convert miles back into meters
         NSUInteger dist = 3*[_business getDistance] / .000621371;
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, dist, dist);
@@ -85,7 +84,6 @@
         mapLoaded = YES;
     }
 }
-
 
 - (IBAction)phoneButton:(UIButton *)sender {
     UIDevice *device = [UIDevice currentDevice];

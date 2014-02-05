@@ -37,6 +37,7 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [[LocationHandler getSharedInstance]setDelegate:self];
+    [[LocationHandler getSharedInstance] startUpdating];
     consumer = [[OAConsumer alloc] initWithKey:@"VyulooMDz3bBe4QZXFNIaQ" secret:@"r28CBYrMixYLqH1NQC2NkJQ78HU"];
     token = [[OAToken alloc] initWithKey:@"IZu11-rYwtDIfhs0PxT7B2vzTxVLplzX" secret:@"whBvqmxSfXbxGBeCQww-gGzYj3k"];
     _foodController = [[FoodDataController alloc] init];
@@ -46,20 +47,16 @@
     
 }
 
--(void)didUpdateToLocation:(CLLocation *)newLocation
-              fromLocation:(CLLocation *)oldLocation{
-    
-    lat = newLocation.coordinate.latitude;
-    lon = newLocation.coordinate.longitude;
-    if(locationFound == NO && lat != 0){
-        locationFound = YES;
+-(void) didUpdateLocations:(NSArray *)locations{
+    lat = [[locations lastObject] coordinate].latitude;
+    lon = [[locations lastObject] coordinate].longitude;
+    if(lat != 0){
         [self refreshBusinesses];
-        [[self tableView] reloadData];
+        [[LocationHandler getSharedInstance] stopUpdating];
     }
 }
 
 -(void)refreshBusinesses{
-    if(locationFound != NO){
     NSString *urlString = [NSString stringWithFormat:@"http://api.yelp.com/v2/search?term=restaurants&sort=1&ll=%.6f,%.6f",lat,lon];
     NSURL *URL = [NSURL URLWithString:urlString];
     
@@ -104,7 +101,6 @@
         NSLog(@"JSON: %@", [JSON yajl_JSONStringWithOptions:YAJLGenOptionsBeautify indentString:@"  "]);
         [[self refreshControl] endRefreshing];
     });
-    }
 }
 
 

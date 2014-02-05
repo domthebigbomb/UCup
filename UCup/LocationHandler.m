@@ -37,6 +37,7 @@ static LocationHandler *DefaultManager = nil;
     [locationManager stopUpdatingLocation];
 }
 
+/* deprecated
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:
 (CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     if ([self.delegate respondsToSelector:@selector
@@ -46,6 +47,10 @@ static LocationHandler *DefaultManager = nil;
                               fromLocation:newLocation];
         
     }
+}
+*/
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    [self.delegate didUpdateLocations:locations];
 }
 
 @end
