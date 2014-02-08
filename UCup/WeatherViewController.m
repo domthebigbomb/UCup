@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *weatherImage;
 @property (weak, nonatomic) IBOutlet UIImageView *weatherbugLogo;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+- (IBAction)ShowHourly:(id)sender;
 @property UIAlertView *alertMsg;
 
 @end
@@ -149,4 +150,8 @@
     [super didReceiveMemoryWarning];
 }
 
+- (IBAction)ShowHourly:(id)sender {
+    _alertMsg = [[UIAlertView alloc] initWithTitle:@"Oh dear..." message:@"Coming Soon!" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles: nil];
+    [_alertMsg show];
+}
 @end

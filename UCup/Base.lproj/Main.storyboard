@@ -386,7 +386,11 @@
                         <color key="backgroundColor" red="0.13725490870000001" green="0.13725490870000001" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Report" id="GMy-FQ-jqN">
-                        <barButtonItem key="rightBarButtonItem" title="Hourly" id="h2z-I2-c3J"/>
+                        <barButtonItem key="rightBarButtonItem" title="Hourly" id="h2z-I2-c3J">
+                            <connections>
+                                <action selector="ShowHourly:" destination="cpq-Sg-FMa" id="G2W-Xo-7Jr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="upU-qE-urp" id="jx5-Z7-QRs"/>
